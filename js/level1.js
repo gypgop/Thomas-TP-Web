@@ -35,7 +35,7 @@ function update() {
 
     if (!isChangingLevel && player.x + player.w == canvas.width) {
         isChangingLevel = true;
-        export var playerX = player.x; 
+
         window.location.href = canvas.dataset.nextLevel;
     }
 }
