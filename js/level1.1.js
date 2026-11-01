@@ -1,7 +1,7 @@
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
-const player = { x: 1, y: 180, w: 40, h: 40, speed: 5 };
+const player = { x: 1, y: 850, w: 40, h: 40, speed: 5 };
 const bg = new Image();
 bg.src = '../img/background1.1.png';
 const sprite = new Image();
