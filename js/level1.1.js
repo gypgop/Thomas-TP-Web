@@ -28,7 +28,7 @@ function update() {
     player.x = Math.max(0, Math.min(canvas.width - player.w, player.x));
     player.y = Math.max(0, Math.min(canvas.height - player.h, player.y));
 
-    if (!isChangingLevel && player.x == 0) {
+    if (!isChangingLevel && player.x == 0 && (player.y <= 875 && player.y >= 800)) { // 875 et 800 son les positions de la porte
         isChangingLevel = true;
         window.location.href = canvas.dataset.nextLevel;
     }

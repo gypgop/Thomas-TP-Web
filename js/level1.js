@@ -17,7 +17,7 @@ const hitboxes = {
     NPC_n1: { x: 0, y: 300, w: 400, h: 20 }
 };
 
-function overlaps(player, object) {
+function contact(player, object) {
     return player.x < object.x + object.w &&
         player.x + player.w > object.x &&
         player.y < object.y + object.h &&
@@ -42,12 +42,12 @@ function update() {
     const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
 
    player.x += horizontalMovement;
-if (overlaps(player, table)) {
+if (contact(player, table)) {
     player.x -= horizontalMovement;
 }
 
 player.y += verticalMovement;
-if (overlaps(player, table)) {
+if (contact(player, table)) {
     player.y -= verticalMovement;
 }   
 
@@ -55,7 +55,7 @@ if (overlaps(player, table)) {
     player.y = Math.max(0, Math.min(canvas.height - player.h, player.y));
     
 
-    if (!isChangingLevel && player.x + player.w == canvas.width) { // a changer pour la pos de la porte
+    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 875 && player.y >= 800)) { // a changer pour la pos de la porte
         isChangingLevel = true;
         window.location.href = canvas.dataset.nextLevel;
     }
