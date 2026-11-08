@@ -70,7 +70,7 @@ function hitbox() {
     if (keys['Space']
         && (player.x <= hitboxes.cuisine.x + 360)
         && (player.x >= hitboxes.cuisine.x - 100)
-        && (player.y >= hitboxes.cuisine.y - 300)) { // :)
+        && (player.y <= hitboxes.cuisine.y + 200)) { // :)
             // bg.src = '../img/maison_Plaques_allume.png';
 
         if (bg.src.endsWith ('maison_Plaques_allume.png')){
