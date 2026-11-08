@@ -43,10 +43,25 @@ window.addEventListener('keyup', e => {
     keys[e.code] = false;
 });
 
-function hitbox() {
-    const horizontalMovement = (keys['KeyD'] ? player.speed : 0) - (keys['KeyA'] ? player.speed : 0); //pas de snappy tappy
-    const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
+function dialogue1 (){
+    document.getElementById("dialogue").textContent = "Bonjour !";
+    // if (keys['']){
+    //     document.getElementById("dialogue").textContent = "aaa !";
+    // }
+}
 
+
+function hitbox() {
+    // console.log(keys)
+
+    const horizontalMovement = (keys['KeyD'] ? player.speed : 0) - (keys['KeyA'] ? player.speed : 0);
+    const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
+    
+    if (keys['Space'] && player.x <= hitboxes.NPC_n1.x + 160) { //parler au npc
+        dialogue1();
+    }
+
+    //direction du sprite joueur
     if (horizontalMovement > 0) {
         sprite.src = '../img/rightSprite.png'
     }
@@ -60,6 +75,7 @@ function hitbox() {
         sprite.src = '../img/upSprite.png'
     }
 
+    //direction npc
     if (player.x < hitboxes.NPC_n1.x  && (player.x < hitboxes.NPC_n1.x - 85 ^ player.x > hitboxes.NPC_n1.x + 85)){
         NPC1.src = '../img/leftSpriteG.png'
     }
@@ -85,11 +101,13 @@ function hitbox() {
         player.y -= verticalMovement;
     }
 
+   
+
     player.x = Math.max(0, Math.min(canvas.width - player.w, player.x));
     player.y = Math.max(0, Math.min(canvas.height - player.h, player.y));
     
 
-    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 820 && player.y >= 600)) { // a changer pour la pos de la porte
+    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 820 && player.y >= 600) && (keys['Space'])) { // a changer pour la pos de la porte
         isChangingLevel = true;
         window.location.href = canvas.dataset.nextLevel;
     }
@@ -113,8 +131,8 @@ function draw() {
     ctx.drawImage(NPC1, hitboxes.NPC_n1.x, hitboxes.NPC_n1.y-50, hitboxes.NPC_n1.w, hitboxes.NPC_n1.h+50); // npc sprite
 
     ctx.fillStyle = 'white';
-    ctx.font = '12px monospace';
-    ctx.fillText('level 1 - Acheter de la nourriture.', 10, 20);
+    ctx.font = '22px monospace';
+    ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
 }
 
 function loop() {
