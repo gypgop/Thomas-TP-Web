@@ -2,19 +2,23 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 1250, y: 850, w: 40, h: 40, speed: 5 };
+const player = { x: 1210, y: 700, w: 80, h: 80, speed: 5 };
 const sprite = new Image();
 sprite.src = '../img/player-sprite.png';
 
 const bg = new Image();
-bg.src = '../img/background2.png';
+bg.src = '../img/background_level_1.0.png';
 
 let isChangingLevel = false;
 
 //gestion des hitbox
 const hitboxes = {
-    table: { x: 225, y: 330, w: 165, h: 195 },
-    NPC_n1: { x: 0, y: 300, w: 400, h: 20 }
+    tv: { x: 0, y: 630, w: 100, h: 250 },
+    canape: { x: 210, y: 630, w: 160, h: 230 },
+    bureau: { x: 1100, y: 0, w: 340, h: 230 },
+    cuisine: { x: 630, y: 0, w: 340, h: 140 },
+    lit: { x: 30, y: 0, w: 470, h: 175 },
+    NPC_n1: { x: 600, y: 500, w: 100, h: 100 }
 };
 
 function contact(player, object) {
@@ -36,26 +40,26 @@ window.addEventListener('keyup', e => {
     keys[e.code] = false;
 });
 
-function update() {
-    const table = hitboxes.table;
+function hitbox() {
     const horizontalMovement = (keys['KeyD'] ? player.speed : 0) - (keys['KeyA'] ? player.speed : 0); //pas de snappy tappy pcq c'est nul
     const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
+    
 
-   player.x += horizontalMovement;
-if (contact(player, table)) {
-    player.x -= horizontalMovement;
-}
+    player.x += horizontalMovement;
+    if (Object.values(hitboxes).some(object => contact(player, object))) {
+        player.x -= horizontalMovement;
+    }
 
-player.y += verticalMovement;
-if (contact(player, table)) {
-    player.y -= verticalMovement;
-}   
+    player.y += verticalMovement;
+    if (Object.values(hitboxes).some(object => contact(player, object))) {
+        player.y -= verticalMovement;
+    }
 
     player.x = Math.max(0, Math.min(canvas.width - player.w, player.x));
     player.y = Math.max(0, Math.min(canvas.height - player.h, player.y));
     
 
-    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 875 && player.y >= 800)) { // a changer pour la pos de la porte
+    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 820 && player.y >= 600)) { // a changer pour la pos de la porte
         isChangingLevel = true;
         window.location.href = canvas.dataset.nextLevel;
     }
@@ -64,24 +68,27 @@ if (contact(player, table)) {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height); // changer les dim pour jeu
+    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height); // zone du jeu
 
-    const table = hitboxes.table;
+// affichages hitboxes
+
     ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
-    ctx.fillRect(table.x, table.y, table.w, table.h);
     ctx.strokeStyle = 'red';
-    ctx.strokeRect(table.x, table.y, table.w, table.h);
+    for (const object of Object.values(hitboxes)) {
+        ctx.fillRect(object.x, object.y, object.w, object.h); 
+        ctx.strokeRect(object.x, object.y, object.w, object.h);
+    }
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h); 
 
     ctx.fillStyle = 'white';
     ctx.font = '12px monospace';
-    ctx.fillText('level 1 - placeHolder description niveau', 10, 20);
+    ctx.fillText('level 1 - Acheter de la nourriture.', 10, 20);
 }
 
 function loop() {
 
-    update();
+    hitbox();
     draw();
     requestAnimationFrame(loop);
 }
