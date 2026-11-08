@@ -2,9 +2,9 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 1, y: 700, w: 80, h: 80, speed: 5 };
+const player = { x: 1, y: 750, w: 80, h: 80, speed: 3 };
 const sprite = new Image();
-sprite.src = '../img/player-sprite.png';
+sprite.src = '../img/rightSprite.png';
 
 const bg = new Image();
 bg.src = '../img/background_level_1.0.png';
@@ -38,6 +38,19 @@ window.addEventListener('keyup', e => {
 function hitbox() {
     const horizontalMovement = (keys['KeyD'] ? player.speed : 0) - (keys['KeyA'] ? player.speed : 0); //pas de snappy tappy pcq c'est nul
     const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
+
+    if (horizontalMovement > 0) {
+        sprite.src = '../img/rightSprite.png'
+    }
+    else if (horizontalMovement < 0) {
+        sprite.src = '../img/leftSprite.png'
+    }
+    else if (verticalMovement > 0) {
+        sprite.src = '../img/downSprite.png'
+    }
+    else if (verticalMovement < 0) {
+        sprite.src = '../img/upSprite.png'
+    }
 
     player.x += horizontalMovement;
     if (Object.values(hitboxes).some(object => contact(player, object))) {
