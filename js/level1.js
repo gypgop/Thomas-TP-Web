@@ -2,7 +2,7 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 1190, y: 750, w: 100, h: 120, speed: 3 };
+const player = { x: 1190, y: 750, w: 100, h: 150, speed: 3 };
 const sprite = new Image();
 sprite.src = '../img/leftSprite.png';
 
@@ -21,7 +21,7 @@ const hitboxes = {
     bureau: { x: 1100, y: 0, w: 340, h: 230 },
     cuisine: { x: 630, y: 0, w: 340, h: 140 },
     lit: { x: 30, y: 0, w: 470, h: 175 },
-    NPC_n1: { x: 500, y: 450, w: 120, h: 130 }
+    NPC_n1: { x: 500, y: 450, w: 120, h: 110 }
 };
 
 function contact(player, object) {
@@ -60,7 +60,12 @@ function hitbox() {
         sprite.src = '../img/upSprite.png'
     }
 
-    
+    if (player.x < hitboxes.NPC_n1.x){
+        NPC1.src = '../img/leftSpriteG.png'
+    }
+    if (player.x > hitboxes.NPC_n1.x){
+        NPC1.src = '../img/rightSpriteG.png'
+    }
 
 
 
@@ -99,7 +104,7 @@ function draw() {
     // }
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h); //player sprite
-    ctx.drawImage(NPC1, hitboxes.NPC_n1.x, hitboxes.NPC_n1.y, hitboxes.NPC_n1.w, hitboxes.NPC_n1.h); // npc sprite
+    ctx.drawImage(NPC1, hitboxes.NPC_n1.x, hitboxes.NPC_n1.y-50, hitboxes.NPC_n1.w, hitboxes.NPC_n1.h+50); // npc sprite
 
     ctx.fillStyle = 'white';
     ctx.font = '12px monospace';
