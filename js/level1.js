@@ -67,9 +67,19 @@ function hitbox() {
         dialogue1();
     }
 
-    // if (keys['Space'] && player.x <= hitboxes.cuisine.y + 40) { //parler au npc
-    //     bg.src = '../img/maison_feu.png'
-    // }
+    if (keys['Space']
+        && (player.x <= hitboxes.cuisine.x + 360)
+        && (player.x >= hitboxes.cuisine.x - 100)
+        && (player.y >= hitboxes.cuisine.y - 300)) { // :)
+            // bg.src = '../img/maison_Plaques_allume.png';
+
+        if (bg.src.endsWith ('maison_Plaques_allume.png')){
+            bg.src = '../img/background_level_1.0.png';
+        }
+        else if (bg.src.endsWith ('background_level_1.0.png')){
+            bg.src = '../img/maison_Plaques_allume.png';
+        }
+    }
 
     //direction du sprite joueur
     if (horizontalMovement > 0) {
