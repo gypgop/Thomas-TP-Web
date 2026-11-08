@@ -60,11 +60,17 @@ function hitbox() {
         sprite.src = '../img/upSprite.png'
     }
 
-    if (player.x < hitboxes.NPC_n1.x){
+    if (player.x < hitboxes.NPC_n1.x  && (player.x < hitboxes.NPC_n1.x - 85 ^ player.x > hitboxes.NPC_n1.x + 85)){
         NPC1.src = '../img/leftSpriteG.png'
     }
-    if (player.x > hitboxes.NPC_n1.x){
+    else if (player.x > hitboxes.NPC_n1.x  && (player.x < hitboxes.NPC_n1.x - 85 ^ player.x > hitboxes.NPC_n1.x + 85)){
         NPC1.src = '../img/rightSpriteG.png'
+    }
+    else if (player.y > hitboxes.NPC_n1.y - 80){
+        NPC1.src = '../img/downSpriteG.png'
+    }
+    else if (player.y < hitboxes.NPC_n1.y - 80){
+        NPC1.src = '../img/upSpriteG.png'
     }
 
 
