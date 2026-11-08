@@ -1,4 +1,4 @@
-let speaking = false;
+let speaking = false; // pour pas recommencer un dialogue en r'appuyant sur espace
 
 function dialogue1() {
     speaking = true
@@ -8,9 +8,9 @@ function dialogue1() {
     const reponse2 = document.getElementById("reponse2");
     const reponse3 = document.getElementById("reponse3");
 
-    reponse1.textContent = "Bonjour !";
-    reponse2.textContent = "Qui t'es qui ?";
-    reponse3.textContent = "aurevoir";
+    reponse1.textContent = "Bonjour!";
+    reponse2.textContent = "comment va tu";
+    reponse3.textContent = "Excuse moi je voulais pas te deranger";
 
     reponse1.style.cursor = "pointer";
     reponse2.style.cursor = "pointer";
@@ -22,10 +22,11 @@ function dialogue1() {
     };
 
     reponse2.onclick = () => {
-        document.getElementById("dialogue").textContent = "Bien?";
+        document.getElementById("dialogue").textContent = "Bien et toi";
     };
 
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Bye!";
+        speaking = false // fin de dialogue
     };
 }
