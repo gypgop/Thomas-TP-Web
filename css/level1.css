@@ -32,12 +32,38 @@ canvas {
 .choice {
   position: absolute;
   left: 110%;
-  top: 32%;
+  top: 20%;
   transform: translateX(-50%);
   font-family: 'Palatino';
   color: rgb(204, 224, 255);
   font-size: 200%;
-  max-width: 400px;
+  max-width: 900px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
+  text-decoration: none;
+}
+
+.choice2 {
+  position: absolute;
+  left: 110%;
+  top: 40%;
+  transform: translateX(-50%);
+  font-family: 'Palatino';
+  color: rgb(204, 224, 255);
+  font-size: 200%;
+  max-width: 900px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
+  text-decoration: none;
+}
+
+.choice3 {
+  position: absolute;
+  left: 110%;
+  top: 60%;
+  transform: translateX(-50%);
+  font-family: 'Palatino';
+  color: rgb(204, 224, 255);
+  font-size: 200%;
+  max-width: 900px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
   text-decoration: none;
 }

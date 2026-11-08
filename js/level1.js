@@ -43,16 +43,6 @@ window.addEventListener('keyup', e => {
     keys[e.code] = false;
 });
 
-function dialogue1 (){
-    document.getElementById("dialogue").textContent = "Bonjour !";
-    document.getElementById('reponse').addEventListener('click', (e) => {
-    e.preventDefault();
-    dialogueActif = !dialogueActif;
-    
-});
-}
-
-
 function hitbox() {
     // console.log(keys)
 
@@ -70,8 +60,9 @@ function hitbox() {
     if (keys['Space']
         && (player.x <= hitboxes.cuisine.x + 360)
         && (player.x >= hitboxes.cuisine.x - 100)
-        && (player.y <= hitboxes.cuisine.y + 200)) { // :)
-            // bg.src = '../img/maison_Plaques_allume.png';
+        && (player.y <= hitboxes.cuisine.y + 200)) {
+        
+            // :)
 
         if (bg.src.endsWith ('maison_Plaques_allume.png')){
             bg.src = '../img/background_level_1.0.png';
