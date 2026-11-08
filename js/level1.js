@@ -45,9 +45,11 @@ window.addEventListener('keyup', e => {
 
 function dialogue1 (){
     document.getElementById("dialogue").textContent = "Bonjour !";
-    // if (keys['']){
-    //     document.getElementById("dialogue").textContent = "aaa !";
-    // }
+    document.getElementById('reponse').addEventListener('click', (e) => {
+    e.preventDefault();
+    dialogueActif = !dialogueActif;
+    
+});
 }
 
 
@@ -57,9 +59,17 @@ function hitbox() {
     const horizontalMovement = (keys['KeyD'] ? player.speed : 0) - (keys['KeyA'] ? player.speed : 0);
     const verticalMovement = (keys['KeyS'] ? player.speed : 0) - (keys['KeyW'] ? player.speed : 0);
     
-    if (keys['Space'] && player.x <= hitboxes.NPC_n1.x + 160) { //parler au npc
+    if (keys['Space'] 
+        && (player.x <= hitboxes.NPC_n1.x + 160)
+        && (player.x >= hitboxes.NPC_n1.x - 160)
+        && ((player.y <= hitboxes.NPC_n1.y + 150) 
+        && (player.y >= hitboxes.NPC_n1.y - 150))) { //parler au npc
         dialogue1();
     }
+
+    // if (keys['Space'] && player.x <= hitboxes.cuisine.y + 40) { //parler au npc
+    //     bg.src = '../img/maison_feu.png'
+    // }
 
     //direction du sprite joueur
     if (horizontalMovement > 0) {

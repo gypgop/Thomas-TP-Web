@@ -28,3 +28,16 @@ canvas {
   max-width: 400px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
 }
+
+.choice {
+  position: absolute;
+  left: 110%;
+  top: 32%;
+  transform: translateX(-50%);
+  font-family: 'Palatino';
+  color: rgb(204, 224, 255);
+  font-size: 200%;
+  max-width: 400px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
+  text-decoration: none;
+}
