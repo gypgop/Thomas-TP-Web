@@ -132,12 +132,7 @@ function draw() {
 
 // affichages hitboxes
 
-    // ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
-    // ctx.strokeStyle = 'red';
-    // for (const object of Object.values(hitboxes)) {
-    //     ctx.fillRect(object.x, object.y, object.w, object.h); 
-    //     ctx.strokeRect(object.x, object.y, object.w, object.h);
-    // }
+    
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h); //player sprite
     ctx.drawImage(NPC1, hitboxes.NPC_n1.x, hitboxes.NPC_n1.y-50, hitboxes.NPC_n1.w, hitboxes.NPC_n1.h+50); // npc sprite
