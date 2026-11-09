@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Game - level 1.1</title>
+  <title>My Game - level 1</title>
   <link rel="stylesheet" href="../css/level1.css">
 </head>
 <body>
-<canvas id="game" width="1300" height="1050" data-next-level="level1.html"></canvas>
-<script src="../js/level1.1.js"></script>
+  <div class="game-container">
+    <p class="dialog" id="dialogue"></p>
+
+    <p class="choice" id="reponse1"></p>
+    <p class="choice2" id="reponse2"></p>
+    <p class="choice3" id="reponse3"></p>
+
+    <canvas id="game" width="1300" height="1050" data-left-level="level1.html" data-right-level="level1.2.html"></canvas>
+  </div>
+  <script src="../js/levelswap.js"></script>
+  <script src="../js/histoire.js"></script>
+  <script src="../js/level1.1.js"></script>
 </body>
-</html>   
+</html>
+

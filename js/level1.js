@@ -2,7 +2,7 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 1190, y: 750, w: 100, h: 150, speed: 3 };
+const player = { x: 1190, y: 700, w: 100, h: 150, speed: 5 };
 const sprite = new Image();
 sprite.src = '../img/leftSprite.png';
 
@@ -10,7 +10,7 @@ const NPC1 = new Image();
 NPC1.src = '../img/rightSpriteG.png';
 
 const bg = new Image();
-bg.src = '../img/background_level_1.0.png';
+bg.src = '../img/maison_Plaques_allume.png';
 
 let isChangingLevel = false;
 
@@ -119,9 +119,9 @@ function hitbox() {
     player.y = Math.max(0, Math.min(canvas.height - player.h, player.y));
     
 
-    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 820 && player.y >= 600) && (keys['Space'])) { // a changer pour la pos de la porte
+    if (!isChangingLevel && player.x + player.w == canvas.width && (player.y <= 820 && player.y >= 600) && (keys['Space']) && (speaking == false)) { // a changer pour la pos de la porte
         isChangingLevel = true;
-        window.location.href = canvas.dataset.nextLevel;
+        tolevel1_1();
     }
 }
 
@@ -142,9 +142,15 @@ function draw() {
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h); //player sprite
     ctx.drawImage(NPC1, hitboxes.NPC_n1.x, hitboxes.NPC_n1.y-50, hitboxes.NPC_n1.w, hitboxes.NPC_n1.h+50); // npc sprite
 
+    if (end == true){
+        ctx.fillStyle = 'white';
+    ctx.font = '44px monospace';
+    ctx.fillText('Objectif : Reserver le resto', 20, 30);
+    }else{
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
     ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
+    }
 }
 
 function loop() {

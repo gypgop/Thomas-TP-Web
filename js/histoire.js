@@ -1,4 +1,4 @@
-let speaking = false
+let end = false
 
 function dialogue1() {
     speaking = true;
@@ -16,7 +16,7 @@ function dialogue1() {
     reponse2.onclick = () => dialogue2();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Ah dommage ! On se verra une autre fois.";
-        speaking = false;
+        base();
     };
 }
 
@@ -31,7 +31,7 @@ function dialogue2() {
     reponse2.onclick = () => dialogue3();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Bon, je vais y aller alors. Salut !";
-        speaking = false;
+        base();
     };
 }
 
@@ -46,7 +46,7 @@ function dialogue3() {
     reponse2.onclick = () => dialogue4();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Pas de probleme, repose toi bien !";
-        speaking = false;
+        base();
     };
 }
 
@@ -61,7 +61,7 @@ function dialogue4() {
     reponse2.onclick = () => dialogue5();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "D'accord, on se fera quelque chose une autre fois !";
-        speaking = false;
+        base();
     };
 }
 
@@ -76,7 +76,7 @@ function dialogue5() {
     reponse2.onclick = () => dialogue6();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Ah, tant pis. On fera ca une prochaine fois !";
-        speaking = false;
+        base();
     };
 }
 
@@ -91,7 +91,7 @@ function dialogue6() {
     reponse2.onclick = () => dialogue7();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Ah... Daccord, je vais rentrer alors.";
-        speaking = false;
+        base();
     };
 }
 
@@ -106,7 +106,7 @@ function dialogue7() {
     reponse2.onclick = () => dialogue8();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Bon, je comprends. A une prochaine fois !";
-        speaking = false;
+        base();
     };
 }
 
@@ -121,7 +121,7 @@ function dialogue8() {
     reponse2.onclick = () => dialogue9();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Cest gentil, mais je crois que je vais rentrer.";
-        speaking = false;
+        base();
     };
 }
 
@@ -136,7 +136,7 @@ function dialogue9() {
     reponse2.onclick = () => dialogue10();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Ah bon ? Bon, je vais rentrer alors.";
-        speaking = false;
+        base();
     };
 }
 
@@ -151,7 +151,7 @@ function dialogue10() {
     reponse2.onclick = () => dialogue11();
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Daccord, on en reparlera une autre fois.";
-        speaking = false;
+        base();
     };
 }
 
@@ -164,19 +164,22 @@ function dialogue11() {
 
     reponse1.onclick = () => {
         document.getElementById("dialogue").textContent = "Super ! Allez, en route pour une belle soiree !";
-        speaking = false;
+        end = true
+        base();
         //fin de niveau
     };
 
     reponse2.onclick = () => {
         document.getElementById("dialogue").textContent = "Je tattends alors. Prends ton temps !";
-        speaking = false;
+        end = true
+        base();
         //fin de niveau
     };
 
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Pas de souci, on remettra ca a une autre fois.";
-        speaking = false;
+        end = true
+        base();
         //fin de niveau
     };
 }
