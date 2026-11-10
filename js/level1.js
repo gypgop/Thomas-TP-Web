@@ -2,7 +2,7 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 1190, y: 700, w: 100, h: 150, speed: 5 };
+const player = { x: 1190, y: 700, w: 100, h: 150, speed: 2 };
 const sprite = new Image();
 sprite.src = '../img/leftSprite.png';
 
@@ -55,7 +55,7 @@ function hitbox() {
         && ((player.y <= hitboxes.NPC_n1.y + 150) 
         && (player.y >= hitboxes.NPC_n1.y - 150))
         && speaking == false
-        && end == false) { //parler au npc
+        && end != true) { //parler au npc
         dialogue1();
     }
 

@@ -108,13 +108,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 2;
-    for (const object of Object.values(hitboxes)) {
-        ctx.fillRect(object.x, object.y, object.w, object.h); 
-        ctx.strokeRect(object.x, object.y, object.w, object.h);
-    }
+    
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h);
     ctx.drawImage(NPC2, hitboxes.NPC_serveur.x, hitboxes.NPC_serveur.y-50, hitboxes.NPC_serveur.w, hitboxes.NPC_serveur.h+50);

@@ -1,4 +1,4 @@
-let end = false
+let end
 
 function dialogue1() {
     speaking = true;
@@ -164,21 +164,21 @@ function dialogue11() {
 
     reponse1.onclick = () => {
         document.getElementById("dialogue").textContent = "Super ! Allez, en route pour une belle soiree !";
-        end = true
+        sessionStorage.setItem("end", "true")
         base();
         //fin de niveau
     };
 
     reponse2.onclick = () => {
         document.getElementById("dialogue").textContent = "On se retrouve plus tard alors!";
-        end = true
+        sessionStorage.setItem("end", "true")
         base();
         //fin de niveau
     };
 
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "Pas de souci, on remettra ca a une autre fois.";
-        end = true
+        sessionStorage.setItem("end", "true")
         base();
         //fin de niveau
     };

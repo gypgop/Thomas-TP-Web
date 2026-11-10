@@ -1,3 +1,4 @@
+
 function reservation1() {
     speaking = true;
     document.getElementById("dialogue").textContent = "Bonjour monsieur ! Bienvenue au restaurant. Que puis-je faire pour vous ?";
@@ -105,10 +106,10 @@ function reservation7() {
 }
 
 function reservation8() {
-    document.getElementById("dialogue").textContent = "Parfait ! Puis-je avoir votre nom pour enregistrer la reservation ?";
+    document.getElementById("dialogue").textContent = "Parfait ! Puis-je avoir votre numero de telephone pour enregistrer la reservation ?";
 
-    reponse1.textContent = "Oui, c'est Martin.";
-    reponse2.textContent = "Bien sur, je m'appelle Thomas.";
+    reponse1.textContent = "Oui, c'est 0607080910.";
+    reponse2.textContent = "Bien sur, 0607080910.";
     reponse3.textContent = "Je prefere ne pas reserver finalement.";
 
     reponse1.onclick = () => reservation9();
@@ -143,17 +144,26 @@ function reservation10() {
 
     reponse1.onclick = () => {
         document.getElementById("dialogue").textContent = "A ce soir";
+        if (sessionStorage.getItem("end") == "true"){
+            window.location.href = "../index.html";
+        }
         base();
         
     };
 
     reponse2.onclick = () => {
         document.getElementById("dialogue").textContent = "A ce soir";
+        if (sessionStorage.getItem("end") == "true"){
+            window.location.href = "../index.html";
+        }
         base();
     };
 
     reponse3.onclick = () => {
         document.getElementById("dialogue").textContent = "A ce soir";
+        if (sessionStorage.getItem("end") == "true"){
+            window.location.href = "../index.html";
+        }
         base();
     };
 }
