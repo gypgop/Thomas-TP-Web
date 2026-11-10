@@ -22,7 +22,7 @@ const hitboxes = {
     etagere: { x: 0, y: 785, w: 160, h: 110 },
     mur2: { x: 0, y: 700, w: 50, h: 110 },
     mur3: { x: 0, y: 330, w: 50, h: 110 },
-    
+    NPC_serveur: { x: 460, y: 200, w: 50, h: 110 },
 
 };
 
@@ -45,8 +45,19 @@ window.addEventListener('keyup', event => {
 });
 
 function update() {
+
+        if (keys['Space'] 
+        && (player.x <= hitboxes.NPC_serveur.x + 160)
+        && (player.x >= hitboxes.NPC_serveur.x - 160)
+        && ((player.y <= hitboxes.NPC_serveur.y + 150) 
+        && (player.y >= hitboxes.NPC_serveur.y - 150))
+        && speaking == false) { //parler au npc
+        cafe1();
+    }
+
     const horizontalMovement = (keys.KeyD ? player.speed : 0) - (keys.KeyA ? player.speed : 0);
     const verticalMovement = (keys.KeyS ? player.speed : 0) - (keys.KeyW ? player.speed : 0);
+
 
     if (horizontalMovement > 0) {
         sprite.src = '../img/rightSprite.png';
