@@ -10,7 +10,6 @@ function base (){
 
 function tolevel1_1() {
 
-    speaking = true;
     const reponse1 = document.getElementById("reponse1");
     const reponse2 = document.getElementById("reponse2");
 
@@ -29,7 +28,6 @@ function tolevel1_1() {
 
 function tolevel1() {
 
-    speaking = true;
     const reponse1 = document.getElementById("reponse1");
     const reponse2 = document.getElementById("reponse2");
 
@@ -48,13 +46,12 @@ function tolevel1() {
 
 function tolevel1_x() {
 
-    speaking = true;
     const reponse1 = document.getElementById("reponse1");
     const reponse2 = document.getElementById("reponse2");
     const reponse3 = document.getElementById("reponse3");
 
-    reponse1.textContent = "cafe";
-    reponse2.textContent = "resto";
+    reponse1.textContent = "resto";
+    reponse2.textContent = "cafe";
     reponse3.textContent = "rester"
     
 

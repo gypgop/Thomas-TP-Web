@@ -69,7 +69,7 @@ function dialogue5() {
     document.getElementById("dialogue").textContent = "Sortir ? Tu pensais aller ou ?";
 
     reponse1.textContent = "Je connais un bon restaurant en ville.";
-    reponse2.textContent = "Je pensais aller prendre un cafe avec toi.";
+    reponse2.textContent = "Je pensais aller diner avec toi.";
     reponse3.textContent = "Finalement, je ne suis plus trop motive.";
 
     reponse1.onclick = () => dialogue6();
@@ -170,7 +170,7 @@ function dialogue11() {
     };
 
     reponse2.onclick = () => {
-        document.getElementById("dialogue").textContent = "Je tattends alors. Prends ton temps !";
+        document.getElementById("dialogue").textContent = "On se retrouve plus tard alors!";
         end = true
         base();
         //fin de niveau

@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1a1a2e;
+}
+
+canvas {
+  border: 2px solid #000000;
+}
+
+.game-container {
+  position: relative;
+  width: 1300px;
+  height: 1050px;
+}
+
+.dialog {
+  position: absolute;
+  left: 23%;
+  top: 20%;
+  transform: translateX(-50%);
+  font-family: 'Palatino';
+  color: rgb(255, 198, 138);
+  font-size: 200%;
+  max-width: 400px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
+}
+
+.choice {
+  top: 30%;
+}
+
+.choice2 {
+  top: 50%;
+}
+.choice3 {
+  top: 70%;
+}
+
+.choice,
+.choice2,
+.choice3 {
+  position: absolute;
+  left: 103%;
+  transform: none;
+  text-align: left;
+  font-family: 'Palatino';
+  color: rgb(204, 224, 255);
+  font-size: 200%;
+  max-width: 230px;
+  width: max-content;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.82);
+  text-decoration: none;
+}

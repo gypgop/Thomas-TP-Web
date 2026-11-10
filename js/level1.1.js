@@ -2,7 +2,7 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 100, y: 700, w: 100, h: 150, speed: 5 };
+const player = { x: 100, y: 700, w: 100, h: 150, speed: 4 };
 const sprite = new Image();
 sprite.src = '../img/rightSprite.png';
 
@@ -84,7 +84,7 @@ function draw() {
     //     ctx.strokeRect(object.x, object.y, object.w, object.h);
     // }
 
-    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h);
 
     if (end == true){

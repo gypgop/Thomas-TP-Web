@@ -54,7 +54,8 @@ function hitbox() {
         && (player.x >= hitboxes.NPC_n1.x - 160)
         && ((player.y <= hitboxes.NPC_n1.y + 150) 
         && (player.y >= hitboxes.NPC_n1.y - 150))
-        && speaking == false) { //parler au npc
+        && speaking == false
+        && end == false) { //parler au npc
         dialogue1();
     }
 
