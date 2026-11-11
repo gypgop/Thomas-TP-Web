@@ -115,9 +115,15 @@ function draw() {
 
     //rajouter un bg pour des meilleurs prio de sprite
     
+    if (end == true){
+        ctx.fillStyle = 'white';
+    ctx.font = '22px monospace';
+    ctx.fillText('Objectif : Reserver le resto', 20, 30);
+    }else{
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
     ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
+    }
     
 }
 function loop() {

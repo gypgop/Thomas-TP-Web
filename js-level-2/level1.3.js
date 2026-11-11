@@ -99,7 +99,7 @@ function draw() {
     
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
+    ctx.fillText('Obejctif: boire un cafe', 10, 20);
     
 }
 function loop() {
