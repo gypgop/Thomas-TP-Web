@@ -2,7 +2,7 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const keys = {};
 
-const player = { x: 100, y: 700, w: 100, h: 150, speed: 4 };
+const player = { x: 10, y: 700, w: 100, h: 150, speed: 4 };
 const sprite = new Image();
 vetements("R") 
 
@@ -93,7 +93,7 @@ function draw() {
 
         ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('Objectif : prendre un cafe', 20, 30);
+    ctx.fillText('ce preparer et ce rendre au restorant', 20, 30);
 
 }
 function loop() {

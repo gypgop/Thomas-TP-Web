@@ -5,12 +5,16 @@ const keys = {};
 const NPC2 = new Image();
 NPC2.src = '../img/serveurgauche.png';
 
-const player = { x: 100, y: 600, w: 75, h: 112, speed: 1 };
+const player = { x: 100, y: 500, w: 90, h: 134, speed: 1 };
 const sprite = new Image();
 vetements("R")
 
 const bg = new Image();
-bg.src = '../img/resto.png';
+if (sessionStorage.getItem("color") == null){   
+    bg.src = '../img/resto.png';
+} else {
+    bg.src = '../img/restordv.png';
+}
 
 let isChangingLevel = false;
 
@@ -18,10 +22,16 @@ const hitboxes = {
     NPC_serveur: { x: 200, y: 400, w: 80, h: 80 },
     comptoire: { x: 0, y: 0, w: 1300, h: 360 },
     
-    table1: { x: 395, y: 480, w: 240, h: 75 },
-    table2: { x: 765, y: 480, w: 240, h: 75 },
-    table3: { x: 330, y: 700, w: 470, h: 175 },
-    table4: { x: 885, y: 700, w: 240, h: 150 },
+    table1: { x: 395, y: 480, w: 240, h: 60 },
+    table2: { x: 765, y: 480, w: 240, h: 60 },
+
+    table3: { x: 330, y: 740, w: 400, h: 140 },
+    table3_1: { x: 420, y: 690, w: 300, h: 50 },
+    table3_2: { x: 780, y: 740, w: 20   , h: 140 },
+
+
+    table4: { x: 900, y: 700, w: 205, h: 150 },
+    
 
     wallgauche: { x: 0, y: 630, w: 100, h: 300 },
     pdfgauche: { x: 100, y: 920, w: 100, h: 300 },
@@ -52,12 +62,31 @@ window.addEventListener('keyup', event => {
 function update() {
 
     if (keys['Space'] 
-        && (player.x <= hitboxes.NPC_serveur.x + 160)
-        && (player.x >= hitboxes.NPC_serveur.x - 160)
-        && ((player.y <= hitboxes.NPC_serveur.y + 150) 
-        && (player.y >= hitboxes.NPC_serveur.y - 150))
+        && (player.x <= hitboxes.NPC_serveur.x + 120)
+        && (player.x >= hitboxes.NPC_serveur.x - 120)
+        && ((player.y <= hitboxes.NPC_serveur.y + 120) 
+        && (player.y >= hitboxes.NPC_serveur.y - 120))
         && speaking == false) { //parler au npc
-        reservation1();
+
+            if (sessionStorage.getItem("color") == "noir"
+            || sessionStorage.getItem("color") == "blanc"
+            || sessionStorage.getItem("color") == "brun" 
+            || sessionStorage.getItem("color") == "rouge"){
+                arrive();
+            }
+            else {
+
+                reservation1();
+            }
+    }
+
+    if (keys['Space'] 
+        && (player.x <= hitboxes.table4.x + 160)
+        && (player.x >= hitboxes.table4.x - 160)
+        && ((player.y <= hitboxes.table4.y + 150) 
+        && (player.y >= hitboxes.table4.y - 150))
+        && speaking == false) { //parler au npc
+        window.location.href = "../index.html";
     }
 
 
@@ -111,7 +140,12 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
-    
+    // ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
+    // ctx.strokeStyle = 'red';
+    // for (const object of Object.values(hitboxes)) {
+    //     ctx.fillRect(object.x, object.y, object.w, object.h);
+    //     ctx.strokeRect(object.x, object.y, object.w, object.h);
+    // }
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h);
     ctx.drawImage(NPC2, hitboxes.NPC_serveur.x, hitboxes.NPC_serveur.y-50, hitboxes.NPC_serveur.w, hitboxes.NPC_serveur.h+50);
@@ -120,7 +154,7 @@ function draw() {
     
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
+    ctx.fillText('ce preparer et ce rendre au restorant', 10, 20);
     
 }
 function loop() {

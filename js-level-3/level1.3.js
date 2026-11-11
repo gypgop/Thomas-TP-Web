@@ -102,7 +102,7 @@ function draw() {
     
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('controls: Z-Q-S-D-Space', 10, 20);
+    ctx.fillText('ce preparer et ce rendre au restorant', 10, 20);
     
 }
 function loop() {

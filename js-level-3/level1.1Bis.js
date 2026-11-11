@@ -4,7 +4,7 @@ const keys = {};
 
 const player = { x: 1200, y: 700, w: 100, h: 150, speed: 4 };
 const sprite = new Image();
-vetements("G")
+vetements("L") 
 
 const bg = new Image();
 bg.src = '../img/background_level1.1.png';
@@ -90,11 +90,11 @@ function draw() {
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h);
 
-    
-    ctx.fillStyle = 'white';
+
+        ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('Objectif: aller au resto', 10, 20); //modif
-    
+    ctx.fillText('ce preparer et ce rendre au restorant', 20, 30);
+
 }
 function loop() {
     update();

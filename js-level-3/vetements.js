@@ -1,6 +1,6 @@
 let color
 
-sessionStorage.getItem("color") = null
+// sessionStorage.getItem("color") = null
 
 function base4 (){
     reponse1.textContent = null;
@@ -23,21 +23,25 @@ function armoire() {
     reponse1.onclick = () => {
         sessionStorage.setItem("color", "blanc")
         base4();
+        sprite.src = '../img/outfitG/whiteback.png'
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse2.onclick = () => {
         sessionStorage.setItem("color", "brun")
         base4();
+        sprite.src = '../img/outfitG/brownback.png'
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse3.onclick = () => {
         sessionStorage.setItem("color", "noir")
         base4();
+        sprite.src = '../img/outfitG/blackback.png'
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse4.onclick = () => {
         sessionStorage.setItem("color", "rouge")
         base4();
+        sprite.src = '../img/outfitG/redback.png'
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     

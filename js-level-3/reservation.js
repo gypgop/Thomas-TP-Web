@@ -1,7 +1,7 @@
 
 function reservation1() {
     speaking = true;
-    document.getElementById("dialogue").textContent = "Bonjour monsieur ! Bienvenue au restaurant. Que puis-je faire pour vous ?";
+    document.getElementById("dialogue").textContent = "Bonjour madame ! Bienvenue au restaurant. Que puis-je faire pour vous ?";
 
     reponse1.textContent = "Bonjour ! Je voudrais reserver une table.";
     reponse2.textContent = "Bonjour ! Je voudrais reserver pour ce soir.";
@@ -10,13 +10,13 @@ function reservation1() {
     reponse1.onclick = () => reservation2();
     reponse2.onclick = () => reservation2();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Pas de probleme monsieur ! Bonne fin de journee et peut-etre a bientot.";
+        document.getElementById("dialogue").textContent = "Pas de probleme madame ! Bonne fin de journee et peut-etre a bientot.";
         base();
     };
 }
 
 function reservation2() {
-    document.getElementById("dialogue").textContent = "Bien sur monsieur ! Pour combien de personnes souhaitez-vous reserver ?";
+    document.getElementById("dialogue").textContent = "Bien sur madame ! Pour combien de personnes souhaitez-vous reserver ?";
 
     reponse1.textContent = "Pour deux personnes, mon amie et moi.";
     reponse2.textContent = "Pour moi et une amie.";
@@ -25,7 +25,7 @@ function reservation2() {
     reponse1.onclick = () => reservation3();
     reponse2.onclick = () => reservation3();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Je comprends monsieur. N'hesitez pas a revenir si vous changez d'avis. Bonne journee !";
+        document.getElementById("dialogue").textContent = "Je comprends madame. N'hesitez pas a revenir si vous changez d'avis. Bonne journee !";
         base();
     };
 }
@@ -40,7 +40,7 @@ function reservation3() {
     reponse1.onclick = () => reservation4();
     reponse2.onclick = () => reservation4();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Pas de souci monsieur ! Vous pourrez revenir quand vous aurez choisi votre horaire. Bonne journee !";
+        document.getElementById("dialogue").textContent = "Pas de souci madame ! Vous pourrez revenir quand vous aurez choisi votre horaire. Bonne journee !";
         base();
     };
 }
@@ -55,7 +55,7 @@ function reservation4() {
     reponse1.onclick = () => reservation5();
     reponse2.onclick = () => reservation5();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Avec plaisir monsieur ! Passez une bonne fin de journee et peut-etre a ce soir.";
+        document.getElementById("dialogue").textContent = "Avec plaisir madame ! Passez une bonne fin de journee et peut-etre a ce soir.";
         base();
     };
 }
@@ -70,7 +70,7 @@ function reservation5() {
     reponse1.onclick = () => reservation6();
     reponse2.onclick = () => reservation6();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Tres bien monsieur ! Je vous souhaite une bonne journee. Au revoir !";
+        document.getElementById("dialogue").textContent = "Tres bien madame ! Je vous souhaite une bonne journee. Au revoir !";
         base();
     };
 }
@@ -85,13 +85,13 @@ function reservation6() {
     reponse1.onclick = () => reservation7();
     reponse2.onclick = () => reservation7();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Aucun probleme monsieur ! Vous pourrez revenir pour reserver une table plus tard. Bonne journee !";
+        document.getElementById("dialogue").textContent = "Aucun probleme madame ! Vous pourrez revenir pour reserver une table plus tard. Bonne journee !";
         base();
     };
 }
 
 function reservation7() {
-    document.getElementById("dialogue").textContent = "Tres bien monsieur ! Je peux vous proposer une belle table pour deux personnes pres de la fenetre.";
+    document.getElementById("dialogue").textContent = "Tres bien madame ! Je peux vous proposer une belle table pour deux personnes pres de la fenetre.";
 
     reponse1.textContent = "Parfait, cela me convient.";
     reponse2.textContent = "C'est exactement ce que je voulais.";
@@ -100,7 +100,7 @@ function reservation7() {
     reponse1.onclick = () => reservation8();
     reponse2.onclick = () => reservation8();
     reponse3.onclick = () => {
-        document.getElementById("dialogue").textContent = "Je comprends monsieur. Bonne journee et peut-etre a une prochaine fois !";
+        document.getElementById("dialogue").textContent = "Je comprends madame. Bonne journee et peut-etre a une prochaine fois !";
         base();
     };
 }
@@ -125,3 +125,26 @@ function reservation8() {
         base();
     };
 }
+
+function arrive() {
+    speaking = true;
+    document.getElementById("dialogue").textContent = "Bonsoir, esque vous avez une reservation?";
+
+    reponse1.textContent = "Oui, au numero 0607080910.";
+    reponse2.textContent = "Bien sur, 0607080910.";
+    reponse3.textContent = "Excusez moi, j'ai oublie quelque chose";
+
+    reponse1.onclick = () => {
+        document.getElementById("dialogue").textContent = "Le jeune homme qui a reserve est deja arrive, il vous attend a la table 4 au fond";
+        base();
+    };
+    reponse2.onclick = () => {
+        document.getElementById("dialogue").textContent = "Le jeune homme qui a reserve est deja arrive, il vous attend a la table 4 au fond";
+        base();
+    };
+    reponse3.onclick = () => {
+        document.getElementById("dialogue").textContent = "Ah! Je vois qu'il y a deja une reservation a ce numero de telephone. Ca ne sera pas possible.";
+        base();
+    };
+}
+

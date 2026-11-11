@@ -119,7 +119,7 @@ function draw() {
 
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('Obejctif: boire un cafe', 10, 20);
+    ctx.fillText('Obejctif: ce preparer et ce rendre au restorant', 10, 20);
 
 }
 
