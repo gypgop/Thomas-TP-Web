@@ -1,5 +1,6 @@
 let color
 
+sessionStorage.getItem("color") = null
 
 function base4 (){
     reponse1.textContent = null;
@@ -11,7 +12,6 @@ function base4 (){
 }
 
 function armoire() {
-    console.log("bb")
     speaking = true;
     document.getElementById("dialogue").textContent = "quel vetement je devrais choisir??";
 
@@ -21,22 +21,22 @@ function armoire() {
     reponse4.textContent = "rouge";
 
     reponse1.onclick = () => {
-        color = "blanc"
+        sessionStorage.setItem("color", "blanc")
         base4();
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse2.onclick = () => {
-        color = "brun"
+        sessionStorage.setItem("color", "brun")
         base4();
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse3.onclick = () => {
-        color = "noir"
+        sessionStorage.setItem("color", "noir")
         base4();
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse4.onclick = () => {
-        color = "rouge"
+        sessionStorage.setItem("color", "rouge")
         base4();
         document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
@@ -48,17 +48,17 @@ function armoire() {
 
 function vetements(direction){
     if (direction == "R") {
-        if (color == "blanc"){
+        if (sessionStorage.getItem("color") == "blanc"){
             sprite.src = '../img/outfitG/whiteright.png'
         }
 
-        else if (color == "brun"){
+        else if (sessionStorage.getItem("color") == "brun"){
             sprite.src = '../img/outfitG/brownright.png'
         }
-        else if (color == "noir"){
+        else if (sessionStorage.getItem("color") == "noir"){
             sprite.src = '../img/outfitG/blackright.png'
         }
-        else if (color == "rouge"){
+        else if (sessionStorage.getItem("color") == "rouge"){
             sprite.src = '../img/outfitG/redright.png'
         }
         else {
@@ -68,17 +68,17 @@ function vetements(direction){
 
 
     else if (direction == "L") {
-        if (color == "blanc"){
+        if (sessionStorage.getItem("color") == "blanc"){
             sprite.src = '../img/outfitG/whiteleft.png'
         }
 
-        else if (color == "brun"){
+        else if (sessionStorage.getItem("color") == "brun"){
             sprite.src = '../img/outfitG/brownleft.png'
         }
-        else if (color == "noir"){
+        else if (sessionStorage.getItem("color") == "noir"){
             sprite.src = '../img/outfitG/blackleft.png'
         }
-        else if (color == "rouge"){
+        else if (sessionStorage.getItem("color") == "rouge"){
             sprite.src = '../img/outfitG/redleft.png'
         }
         else {
@@ -88,17 +88,17 @@ function vetements(direction){
 
 
     else if (direction == "D") {
-        if (color == "blanc"){
+        if (sessionStorage.getItem("color") == "blanc"){
             sprite.src = '../img/outfitG/whitefront.png'
         }
 
-        else if (color == "brun"){
+        else if (sessionStorage.getItem("color") == "brun"){
             sprite.src = '../img/outfitG/brownfront.png'
         }
-        else if (color == "noir"){
+        else if (sessionStorage.getItem("color") == "noir"){
             sprite.src = '../img/outfitG/blackfront.png'
         }
-        else if (color == "rouge"){
+        else if (sessionStorage.getItem("color") == "rouge"){
             sprite.src = '../img/outfitG/redfront.png'
         }
         else {
@@ -108,17 +108,17 @@ function vetements(direction){
 
 
     else if (direction == "U") {
-        if (color == "blanc"){
+        if (sessionStorage.getItem("color") == "blanc"){
             sprite.src = '../img/outfitG/whiteback.png'
         }
 
-        else if (color == "brun"){
+        else if (sessionStorage.getItem("color") == "brun"){
             sprite.src = '../img/outfitG/brownback.png'
         }
-        else if (color == "noir"){
+        else if (sessionStorage.getItem("color") == "noir"){
             sprite.src = '../img/outfitG/blackback.png'
         }
-        else if (color == "rouge"){
+        else if (sessionStorage.getItem("color") == "rouge"){
             sprite.src = '../img/outfitG/redback.png'
         }
         else {

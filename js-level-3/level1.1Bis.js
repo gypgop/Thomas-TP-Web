@@ -4,7 +4,7 @@ const keys = {};
 
 const player = { x: 1200, y: 700, w: 100, h: 150, speed: 4 };
 const sprite = new Image();
-sprite.src = '../img/leftSprite.png';
+vetements("G")
 
 const bg = new Image();
 bg.src = '../img/background_level1.1.png';
@@ -41,13 +41,16 @@ function update() {
     const verticalMovement = (keys.KeyS ? player.speed : 0) - (keys.KeyW ? player.speed : 0);
 
     if (horizontalMovement > 0) {
-        sprite.src = '../img/rightSprite.png';
-    } else if (horizontalMovement < 0) {
-        sprite.src = '../img/leftSprite.png';
-    } else if (verticalMovement > 0) {
-        sprite.src = '../img/downSprite.png';
-    } else if (verticalMovement < 0) {
-        sprite.src = '../img/upSprite.png';
+        vetements("R")
+    }
+    else if (horizontalMovement < 0) {
+        vetements("L")
+    }
+    else if (verticalMovement > 0) {
+        vetements("D")
+    }
+    else if (verticalMovement < 0) {
+        vetements("U")
     }
 
     player.x += horizontalMovement;
@@ -90,7 +93,7 @@ function draw() {
     
     ctx.fillStyle = 'white';
     ctx.font = '22px monospace';
-    ctx.fillText('Objectif: prendre un cafe', 10, 20);
+    ctx.fillText('Objectif: aller au resto', 10, 20); //modif
     
 }
 function loop() {

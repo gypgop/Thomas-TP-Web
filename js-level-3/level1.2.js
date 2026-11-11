@@ -7,7 +7,7 @@ NPC2.src = '../img/serveurgauche.png';
 
 const player = { x: 100, y: 600, w: 75, h: 112, speed: 1 };
 const sprite = new Image();
-sprite.src = '../img/rightSprite.png';
+vetements("R")
 
 const bg = new Image();
 bg.src = '../img/resto.png';
@@ -65,13 +65,16 @@ function update() {
     const verticalMovement = (keys.KeyS ? player.speed : 0) - (keys.KeyW ? player.speed : 0);
 
     if (horizontalMovement > 0) {
-        sprite.src = '../img/rightSprite.png';
-    } else if (horizontalMovement < 0) {
-        sprite.src = '../img/leftSprite.png';
-    } else if (verticalMovement > 0) {
-        sprite.src = '../img/downSprite.png';
-    } else if (verticalMovement < 0) {
-        sprite.src = '../img/upSprite.png';
+        vetements("R")
+    }
+    else if (horizontalMovement < 0) {
+        vetements("L")
+    }
+    else if (verticalMovement > 0) {
+        vetements("D")
+    }
+    else if (verticalMovement < 0) {
+        vetements("U")
     }
 
     if (player.x < hitboxes.NPC_serveur.x  && (player.x < hitboxes.NPC_serveur.x - 85 ^ player.x > hitboxes.NPC_serveur.x + 85)){

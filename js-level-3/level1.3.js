@@ -4,7 +4,7 @@ const keys = {};
 
 const player = { x: 100, y: 550, w: 100, h: 150, speed: 1 };
 const sprite = new Image();
-sprite.src = '../img/rightSprite.png';
+vetements("R")
 
 const bg = new Image();
 bg.src = '../img/cafe.png';
@@ -60,13 +60,16 @@ function update() {
 
 
     if (horizontalMovement > 0) {
-        sprite.src = '../img/rightSprite.png';
-    } else if (horizontalMovement < 0) {
-        sprite.src = '../img/leftSprite.png';
-    } else if (verticalMovement > 0) {
-        sprite.src = '../img/downSprite.png';
-    } else if (verticalMovement < 0) {
-        sprite.src = '../img/upSprite.png';
+        vetements("R")
+    }
+    else if (horizontalMovement < 0) {
+        vetements("L")
+    }
+    else if (verticalMovement > 0) {
+        vetements("D")
+    }
+    else if (verticalMovement < 0) {
+        vetements("U")
     }
 
     player.x += horizontalMovement;

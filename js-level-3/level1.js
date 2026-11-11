@@ -4,7 +4,7 @@ const keys = {};
 
 const player = { x: 1100, y: 560, w: 130, h: 200, speed: 2 };
 const sprite = new Image();
-sprite.src = '../img/leftSpriteG.png';
+vetements("L")
 
 
 const bg = new Image();
@@ -107,12 +107,12 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height); // zone du jeu
 
-    ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
-    ctx.strokeStyle = 'red';
-    for (const object of Object.values(hitboxes)) {
-        ctx.fillRect(object.x, object.y, object.w, object.h);
-        ctx.strokeRect(object.x, object.y, object.w, object.h);
-    }
+    // ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
+    // ctx.strokeStyle = 'red';
+    // for (const object of Object.values(hitboxes)) {
+    //     ctx.fillRect(object.x, object.y, object.w, object.h);
+    //     ctx.strokeRect(object.x, object.y, object.w, object.h);
+    // }
 
     ctx.drawImage(sprite, player.x, player.y, player.w, player.h); //player sprite
 

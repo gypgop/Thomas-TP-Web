@@ -4,7 +4,7 @@ const keys = {};
 
 const player = { x: 100, y: 700, w: 100, h: 150, speed: 4 };
 const sprite = new Image();
-sprite.src = '../img/rightSprite.png';
+vetements("R") 
 
 const bg = new Image();
 bg.src = '../img/background_level1.1.png';
