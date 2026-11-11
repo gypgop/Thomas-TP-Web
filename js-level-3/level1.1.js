@@ -41,13 +41,16 @@ function update() {
     const verticalMovement = (keys.KeyS ? player.speed : 0) - (keys.KeyW ? player.speed : 0);
 
     if (horizontalMovement > 0) {
-        sprite.src = '../img/rightSprite.png';
-    } else if (horizontalMovement < 0) {
-        sprite.src = '../img/leftSprite.png';
-    } else if (verticalMovement > 0) {
-        sprite.src = '../img/downSprite.png';
-    } else if (verticalMovement < 0) {
-        sprite.src = '../img/upSprite.png';
+        vetements("R")
+    }
+    else if (horizontalMovement < 0) {
+        vetements("L")
+    }
+    else if (verticalMovement > 0) {
+        vetements("D")
+    }
+    else if (verticalMovement < 0) {
+        vetements("U")
     }
 
     player.x += horizontalMovement;

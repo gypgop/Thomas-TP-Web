@@ -4,7 +4,6 @@ function base (){
     reponse1.textContent = null;
     reponse2.textContent = null;
     reponse3.textContent = null;
-    reponse4.textContent = null;
     speaking = false
     isChangingLevel = false
 }

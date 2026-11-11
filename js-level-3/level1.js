@@ -15,7 +15,9 @@ let isChangingLevel = false;
 //gestion des hitbox
 const hitboxes = {
     etagere: { x: 10, y: 240, w: 100, h: 250 },
+
     armoire: { x: 130, y: 0, w: 290, h: 290 },
+
     lit: { x: 10, y: 500, w: 270, h: 300 },
     tableDeNuit: { x: 10, y: 900, w: 100, h: 100 },
     bureau: { x: 780, y: 200, w: 340, h: 100 },
@@ -54,9 +56,10 @@ function hitbox() {
     
 
     if (keys['Space'] 
-        && (player.x <= hitboxes.armoire.x + 360)
-        && (player.x >= hitboxes.armoire.x - 100)
-        && (player.y <= hitboxes.armoire.y + 200)) {
+        && (player.x <= hitboxes.armoire.x + hitboxes.armoire.w + 10)
+        && (player.x >= hitboxes.armoire.x - 10)
+        && (player.y <= hitboxes.armoire.y + 350)) {
+            armoire();
 
     }
 

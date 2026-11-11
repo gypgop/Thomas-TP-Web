@@ -1,6 +1,17 @@
 let color
 
-function cafe1() {
+
+function base4 (){
+    reponse1.textContent = null;
+    reponse2.textContent = null;
+    reponse3.textContent = null;
+    reponse4.textContent = null;
+    speaking = false
+    isChangingLevel = false
+}
+
+function armoire() {
+    console.log("bb")
     speaking = true;
     document.getElementById("dialogue").textContent = "quel vetement je devrais choisir??";
 
@@ -11,19 +22,26 @@ function cafe1() {
 
     reponse1.onclick = () => {
         color = "blanc"
-        base();
-    };reponse2.onclick = () => {
+        base4();
+        document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
+    };
+    reponse2.onclick = () => {
         color = "brun"
-        base();
+        base4();
+        document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse3.onclick = () => {
         color = "noir"
-        base();
+        base4();
+        document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
     reponse4.onclick = () => {
         color = "rouge"
-        base();
+        base4();
+        document.getElementById("dialogue").textContent = "Je pense que ca va lui plaire";
     };
+    
+
 }
 
 
@@ -35,13 +53,13 @@ function vetements(direction){
         }
 
         else if (color == "brun"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/brownright.png'
         }
         else if (color == "noir"){
             sprite.src = '../img/outfitG/blackright.png'
         }
         else if (color == "rouge"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/redright.png'
         }
         else {
             sprite.src = '../img/rightSpriteG.png'
@@ -55,13 +73,13 @@ function vetements(direction){
         }
 
         else if (color == "brun"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/brownleft.png'
         }
         else if (color == "noir"){
             sprite.src = '../img/outfitG/blackleft.png'
         }
         else if (color == "rouge"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/redleft.png'
         }
         else {
             sprite.src = '../img/leftSpriteG.png'
@@ -75,33 +93,33 @@ function vetements(direction){
         }
 
         else if (color == "brun"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/brownfront.png'
         }
         else if (color == "noir"){
             sprite.src = '../img/outfitG/blackfront.png'
         }
         else if (color == "rouge"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/redfront.png'
         }
         else {
             sprite.src = '../img/downSpriteG.png'
         }
     }
 
-    
+
     else if (direction == "U") {
         if (color == "blanc"){
             sprite.src = '../img/outfitG/whiteback.png'
         }
 
         else if (color == "brun"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/brownback.png'
         }
         else if (color == "noir"){
             sprite.src = '../img/outfitG/blackback.png'
         }
         else if (color == "rouge"){
-            //sprite de couleur
+            sprite.src = '../img/outfitG/redback.png'
         }
         else {
             sprite.src = '../img/upSpriteG.png'
